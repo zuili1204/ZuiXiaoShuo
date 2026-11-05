@@ -5,8 +5,7 @@
   "main": "dist-electron/main.js",
   "scripts": {
     "dev": "vite",
-    "pack:skills": "node scripts/pack-skills.mjs",
-    "build": "npm run pack:skills && tsc -p tsconfig.json && tsc -p tsconfig.node.json && vite build",
+    "build": "tsc -p tsconfig.json && tsc -p tsconfig.node.json && vite build",
     "typecheck": "tsc -p tsconfig.json && tsc -p tsconfig.node.json",
     "build:electron": "vite build",
     "preview": "vite preview",
@@ -70,13 +69,7 @@
       "dist/**/*",
       "dist-electron/**/*",
       "scripts/style-metrics-lib.cjs",
-      "src/skills/**/scripts/**/*"
-    ],
-    "extraResources": [
-      {
-        "from": "resources/skills",
-        "to": "skills"
-      }
+      "src/skills/**/*"
     ],
     "win": {
       "target": [

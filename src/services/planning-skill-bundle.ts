@@ -1,4 +1,4 @@
-// 规划技能参考文件：统一从主进程技能保险库读取。
+// 规划技能参考文件：统一经主进程从技能库读取。
 // 键名必须与技能的 references 索引、PLAN_STAGE_SKILLS 中的引用完全一致。
 import { getSkillFile } from './skill-service'
 

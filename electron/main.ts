@@ -4,7 +4,7 @@ import { initDatabase, getDatabase } from './services/db-service'
 import { fileService } from './services/file-service'
 import { actionLogger, installGlobalErrorHandlers } from './services/logger'
 import { encryptKey, decryptKey } from './services/key-service'
-import { skillVault } from './services/skill-vault'
+import { skillContent } from './services/skill-content'
 import { checkQuality } from './services/quality-checker'
 import { checkPlanHealth, validatePlanProposal, type PlanHealthInput, type PlanValidationInput } from './services/plan-validator'
 import { CorpusService } from './services/corpus-service'
@@ -137,9 +137,9 @@ function registerIpcHandlers() {
     return fileService.readFile(filePath)
   })
 
-  // 技能内容只从保险库按文件键读取；同步通道供渲染层在模块初始化时注入 prompt。
+  // 技能内容按文件键从应用目录读取；同步通道供渲染层在模块初始化时注入 prompt。
   ipcMain.on('skill:read-file', (event, relKey: string) => {
-    event.returnValue = skillVault.read(relKey)
+    event.returnValue = skillContent.read(relKey)
   })
   ipcMain.handle('file:write', (_event, filePath: string, content: string) => {
     return fileService.writeFile(filePath, content)
@@ -329,7 +329,7 @@ app.whenReady().then(() => {
   if (isDev) logPaths.push(join(process.cwd(), 'log.txt'))
   actionLogger.init(logPaths)
   installGlobalErrorHandlers()
-  skillVault.load()
+  skillContent.load()
   registerIpcHandlers()
   // 启动时根据已保存的 dataPath 设置文件根目录，使 content 相对路径落到用户数据目录
   try {

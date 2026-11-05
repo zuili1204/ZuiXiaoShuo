@@ -18,7 +18,7 @@ import type { ContinuityFinding } from './continuity-checker'
 import { ActionLog } from './log-service'
 import { WRITING_CONSTRAINT } from '@shared/writing-constraint'
 
-// 全局基础 system prompt（写作生成的底层提示词，经主进程技能保险库注入）
+// 全局基础 system prompt（写作生成的底层提示词，经主进程从技能库注入）
 const basePrompt = getSkillFile('unrestricted/UNRESTRICTED.md') ?? ''
 // 安全/约束层（在基础提示词之后注入）
 const sandboxPrompt = getSkillFile('unrestricted/SANDBOX.md') ?? ''
