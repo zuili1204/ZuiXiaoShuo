@@ -1,0 +1,161 @@
+{
+  "source": "匿名人工稿基线（30 章）",
+  "generatedAt": "2026-10-02T13:18:03.870Z",
+  "chapters": [
+    {
+      "title": "第10章",
+      "chars": 2562
+    },
+    {
+      "title": "第11章",
+      "chars": 2190
+    },
+    {
+      "title": "第12章",
+      "chars": 2064
+    },
+    {
+      "title": "第13章",
+      "chars": 2333
+    },
+    {
+      "title": "第14章",
+      "chars": 2136
+    },
+    {
+      "title": "第15章",
+      "chars": 2481
+    },
+    {
+      "title": "第16章",
+      "chars": 2110
+    },
+    {
+      "title": "第17章",
+      "chars": 2178
+    },
+    {
+      "title": "第18章",
+      "chars": 2250
+    },
+    {
+      "title": "第19章",
+      "chars": 2317
+    },
+    {
+      "title": "第1章",
+      "chars": 3624
+    },
+    {
+      "title": "第20章",
+      "chars": 2081
+    },
+    {
+      "title": "第21章",
+      "chars": 2039
+    },
+    {
+      "title": "第22章",
+      "chars": 2136
+    },
+    {
+      "title": "第23章",
+      "chars": 2287
+    },
+    {
+      "title": "第24章",
+      "chars": 2614
+    },
+    {
+      "title": "第25章",
+      "chars": 2025
+    },
+    {
+      "title": "第26章",
+      "chars": 2298
+    },
+    {
+      "title": "第27章",
+      "chars": 2140
+    },
+    {
+      "title": "第28章",
+      "chars": 2494
+    },
+    {
+      "title": "第29章",
+      "chars": 2236
+    },
+    {
+      "title": "第2章",
+      "chars": 3532
+    },
+    {
+      "title": "第30章",
+      "chars": 2646
+    },
+    {
+      "title": "第3章",
+      "chars": 2170
+    },
+    {
+      "title": "第4章",
+      "chars": 2161
+    },
+    {
+      "title": "第5章",
+      "chars": 2202
+    },
+    {
+      "title": "第6章",
+      "chars": 2249
+    },
+    {
+      "title": "第7章",
+      "chars": 2312
+    },
+    {
+      "title": "第8章",
+      "chars": 2178
+    },
+    {
+      "title": "第9章",
+      "chars": 2147
+    }
+  ],
+  "metrics": {
+    "chars": 2340,
+    "chapterCharsCV": 15.7,
+    "charsMin": 2025,
+    "charsMax": 3624,
+    "p10": 2081,
+    "p50": 2236,
+    "p90": 2646,
+    "paragraph": {
+      "count": 2547,
+      "avgLen": 27.6,
+      "maxLen": 85,
+      "pctOver100": 0
+    },
+    "sentence": {
+      "count": 3167,
+      "avgLen": 20.9,
+      "pctOver60": 0.8
+    },
+    "similePer1k": 0.93,
+    "quotes": {
+      "curly": 2246,
+      "corner": 0,
+      "straight": 0
+    },
+    "dashPerChapter": 0.3,
+    "climatePer1k": 0.04,
+    "dialogue": {
+      "count": 1123,
+      "avgLen": 12.6,
+      "pctShort": 72.1
+    },
+    "behaviorVsEmotion": 3.61,
+    "chapterEndSublimeRate": "0/30"
+  }
+}
