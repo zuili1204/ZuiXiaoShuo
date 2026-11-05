@@ -33,6 +33,7 @@
 - [功能概览](#功能概览)
 - [界面预览](#界面预览)
 - [技术架构](#技术架构)
+- [直接下载使用](#直接下载使用)
 - [快速开始](#快速开始)
 - [配置 AI 与 API 密钥](#配置-ai-与-api-密钥)
 - [数据存放与备份](#数据存放与备份)
@@ -148,6 +149,15 @@ flowchart LR
 | 测试 | Vitest（单元/服务）· Playwright Electron E2E |
 
 调用链：渲染进程 → `preload` contextBridge → IPC → 主进程服务 → SQLite/文件系统。AI 请求由渲染进程业务服务直接发往你配置的模型服务商，主进程不中转、不保存请求正文。
+
+## 直接下载使用
+
+不想配置开发环境？到 [Releases](https://github.com/zuili1204/ZuiXiaoShuo/releases/latest) 下载 Windows 安装包即可直接使用：
+
+- **安装版**（`ZuiXiaoShuo-1.0.0-Setup.exe`）：双击安装，可自选安装目录并创建桌面 / 开始菜单快捷方式。
+- **便携版**（`ZuiXiaoShuo-1.0.0-portable.exe`）：免安装，下载后直接运行。
+
+首次启动无需账号；未配置模型密钥时，立项、规划、编辑、快照、本地质检与 DOCX 导出仍可正常使用。系统要求 Windows 10 / 11（x64）。
 
 ## 快速开始
 

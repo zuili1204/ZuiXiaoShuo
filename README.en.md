@@ -33,6 +33,7 @@ ZuiXiaoShuo brings the full loop of **ideation → planning → daily writing �
 - [Features](#features)
 - [Screenshots](#screenshots)
 - [Architecture](#architecture)
+- [Download and run](#download-and-run)
 - [Getting started](#getting-started)
 - [AI setup and API keys](#ai-setup-and-api-keys)
 - [Data location and backups](#data-location-and-backups)
@@ -148,6 +149,15 @@ flowchart LR
 | Testing | Vitest (unit/service) · Playwright Electron E2E |
 
 Call chain: renderer → `preload` contextBridge → IPC → main-process services → SQLite/filesystem. AI requests go directly from renderer services to the provider you configured; the main process neither relays nor stores request bodies.
+
+## Download and run
+
+No development environment needed: download the Windows build from [Releases](https://github.com/zuili1204/ZuiXiaoShuo/releases/latest) and run it directly.
+
+- **Installer** (`ZuiXiaoShuo-1.0.0-Setup.exe`): double-click to install, choose the install directory and create desktop / Start menu shortcuts.
+- **Portable** (`ZuiXiaoShuo-1.0.0-portable.exe`): no installation, just run the downloaded executable.
+
+No account is required. Without a model API key, scoping, planning, editing, snapshots, local quality checks and DOCX export all still work. Windows 10 / 11 (x64) is required.
 
 ## Getting started
 
