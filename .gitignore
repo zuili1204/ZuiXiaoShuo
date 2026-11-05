@@ -1,0 +1,72 @@
+# 依赖与构建产物
+node_modules/
+dist/
+dist-electron/
+release/
+build/
+out/
+*.tsbuildinfo
+
+# 测试与覆盖率
+test-results/
+playwright-report/
+blob-report/
+coverage/
+.vitest/
+
+# 规划评估产物（每次测试重新生成）
+scripts/plan-eval/report.json
+scripts/plan-eval/report.md
+scripts/plan-eval/outputs.json
+
+# 本地缓存与工具产物
+npm-cache/
+resources/skills/
+.cache/
+.eslintcache
+
+# 日志
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# 环境变量与密钥
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.keystore
+secrets/
+ab-key.txt
+
+# 本地数据库与用户数据
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3
+userData/
+ZXS_USER_DATA_DIR/
+
+# 写作中的真实书稿与本地备份（绝不提交）
+content/
+_archive/
+*.bak
+
+# 写作技能库仅本地保留，构建时打包为加密资源，不进入公开仓库
+src/skills/
+
+# 编辑器与系统文件
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
