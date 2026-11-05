@@ -21,7 +21,6 @@ scripts/plan-eval/outputs.json
 
 # 本地缓存与工具产物
 npm-cache/
-resources/skills/
 .cache/
 .eslintcache
 
@@ -59,9 +58,6 @@ ZXS_USER_DATA_DIR/
 content/
 _archive/
 *.bak
-
-# 写作技能库仅本地保留，构建时打包为加密资源，不进入公开仓库
-src/skills/
 
 # 编辑器与系统文件
 .vscode/*
