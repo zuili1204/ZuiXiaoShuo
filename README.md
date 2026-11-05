@@ -16,6 +16,7 @@
 
 <p>
   <a href="README.en.md">English</a> ·
+  <a href="https://github.com/zuili1204/ZuiXiaoShuo/releases/latest">直接下载</a> ·
   <a href="#快速开始">快速开始</a> ·
   <a href="LICENSE">许可证</a>
 </p>

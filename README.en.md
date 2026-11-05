@@ -16,6 +16,7 @@
 
 <p>
   <a href="README.md">简体中文</a> ·
+  <a href="https://github.com/zuili1204/ZuiXiaoShuo/releases/latest">Download</a> ·
   <a href="#getting-started">Getting started</a> ·
   <a href="LICENSE">License</a>
 </p>
