@@ -1,0 +1,183 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== Base Layer: CSS Custom Properties ===== */
+@layer base {
+  :root {
+    /* Primitive Tokens */
+    --color-white: 0 0% 100%;
+    --color-black: 0 0% 0%;
+    --color-slate-50: 210 40% 98%;
+    --color-slate-100: 210 40% 96%;
+    --color-slate-200: 214 32% 91%;
+    --color-slate-300: 213 27% 84%;
+    --color-slate-400: 215 20% 65%;
+    --color-slate-500: 215 16% 47%;
+    --color-slate-600: 215 19% 35%;
+    --color-slate-700: 215 25% 27%;
+    --color-slate-800: 217 33% 17%;
+    --color-slate-900: 222 47% 11%;
+    --color-slate-950: 229 84% 5%;
+
+    --color-accent-400: 199 89% 48%;
+    --color-accent-500: 199 89% 40%;
+    --color-accent-600: 199 87% 32%;
+
+    --color-red-500: 0 84% 60%;
+    --color-green-500: 142 76% 36%;
+    --color-yellow-500: 45 93% 47%;
+
+    /* Semantic Tokens - Light */
+    --background: var(--color-white);
+    --foreground: var(--color-slate-900);
+    --card: var(--color-white);
+    --card-foreground: var(--color-slate-900);
+    --popover: var(--color-white);
+    --popover-foreground: var(--color-slate-900);
+    --primary: var(--color-accent-500);
+    --primary-foreground: var(--color-white);
+    --secondary: var(--color-slate-100);
+    --secondary-foreground: var(--color-slate-900);
+    --muted: var(--color-slate-100);
+    --muted-foreground: var(--color-slate-500);
+    --accent: var(--color-slate-100);
+    --accent-foreground: var(--color-slate-900);
+    --destructive: var(--color-red-500);
+    --destructive-foreground: var(--color-white);
+    --success: var(--color-green-500);
+    --success-foreground: var(--color-white);
+    --warning: var(--color-yellow-500);
+    --warning-foreground: var(--color-white);
+    --border: var(--color-slate-200);
+    --input: var(--color-slate-200);
+    --ring: var(--color-accent-500);
+    --radius: 0.5rem;
+
+    /* Sidebar - Light */
+    --sidebar-background: var(--color-slate-50);
+    --sidebar-foreground: var(--color-slate-700);
+    --sidebar-accent: var(--color-slate-200);
+    --sidebar-accent-foreground: var(--color-slate-900);
+    --sidebar-border: var(--color-slate-200);
+    --sidebar-ring: var(--color-accent-500);
+  }
+
+  /* Semantic Tokens - Dark (app applies .theme-dark) */
+  .theme-dark,
+  .dark {
+    --background: 228 12% 7%;
+    --foreground: 210 40% 98%;
+    --card: 228 12% 9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 228 12% 9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 199 89% 48%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 217 19% 27%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217 19% 27%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 217 19% 27%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+    --warning: 45 93% 47%;
+    --warning-foreground: 0 0% 100%;
+    --border: 217 19% 27%;
+    --input: 217 19% 27%;
+    --ring: 199 89% 48%;
+
+    --sidebar-background: 228 20% 5%;
+    --sidebar-foreground: 215 20% 65%;
+    --sidebar-accent: 217 19% 17%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217 19% 17%;
+    --sidebar-ring: 199 89% 48%;
+  }
+}
+
+/* ===== Base Styles ===== */
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    overflow: hidden;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  /* 关键修复：body 的 user-select:none 会继承到所有输入控件，
+     导致 textarea/input 点击后光标(caret)不渲染、无法正常输入。
+     这里对所有可编辑元素恢复文本选择，根治「点击无光标」问题。 */
+  input,
+  textarea,
+  [contenteditable='true'],
+  [contenteditable=''],
+  [contenteditable='plaintext-only'] {
+    user-select: text !important;
+    -webkit-user-select: text !important;
+  }
+  /* Scrollbar - dark theme */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground) / 0.3);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground) / 0.5);
+  }
+  ::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+}
+
+/* ===== Component Layer ===== */
+@layer components {
+  /* Glass card effect */
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-sm border border-border/50;
+  }
+  .glass-card-hover {
+    @apply glass-card transition-all duration-200 ease-out;
+    &:hover {
+      @apply scale-[1.02] shadow-lg shadow-primary/5 border-primary/20;
+    }
+  }
+
+  /* Title bar drag region */
+  .drag-region {
+    -webkit-app-region: drag;
+    app-region: drag;
+  }
+  .no-drag {
+    -webkit-app-region: no-drag;
+    app-region: no-drag;
+  }
+
+  /* Editor styles */
+  .editor-content {
+    @apply font-mono text-sm leading-relaxed;
+  }
+  .editor-content h1 { @apply text-2xl font-bold my-4; }
+  .editor-content h2 { @apply text-xl font-semibold my-3; }
+  .editor-content h3 { @apply text-lg font-medium my-2; }
+  .editor-content p { @apply my-2; }
+
+  /* Shimmer skeleton loading */
+  .skeleton {
+    @apply animate-pulse bg-muted rounded-md;
+  }
+}
