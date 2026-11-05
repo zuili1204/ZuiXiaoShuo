@@ -157,8 +157,7 @@ Call chain: renderer → `preload` contextBridge → IPC → main-process servic
 - Windows 10 / 11 (the primary supported platform)
 - A toolchain able to compile the native `better-sqlite3` module on first install
 
-> [!IMPORTANT]
-> The writing skill library (`src/skills/`) is not published with this repository. Provide your own skill library and encryption key locally (environment variable `ZXS_SKILL_KEY`, or the git-ignored `.env.skills.local`) before running or building. Without them, type-checking and the build cannot complete; the skill library, key file and encrypted bundle are all excluded from Git.
+> All 30+ built-in writing skills (`src/skills/`) are published with this repository and can be read, modified and extended directly.
 
 ### Install and run
 
@@ -242,7 +241,7 @@ src/                 Renderer
   pages/             Home, workbench, planning, style library, settings, help
   components/        Editor, outline, knowledge base, style, settings UI
   services/          AI calls, context assembly, planning, continuity, export, etc.
-  skills/            Writing skill library (local only, not committed; required to build)
+  skills/            30+ SKILL.md writing skills and references (open source with this repo)
   stores/            Zustand state
 shared/              Types and pure algorithms shared by main and renderer
 scripts/             Metrics, planning evaluation, baseline tooling
